@@ -62,11 +62,37 @@
     zoxide
     ];
 
-  # Terminal
-
   # Enable home-manager and git
   programs.home-manager.enable = true;
-  programs.git.enable = true;
+
+  programs.git = {
+    enable = true;
+    userEmail = "hello@sparrows.dev";
+    userName = "Charlot Shaw";
+    difftastic.enable = true;
+
+    extraConfig = {
+      rerere.enable = true;
+
+      diff.algorithm = "patience";
+
+      pull.rebase = true;
+
+      commit.gpgsign = true;
+      user.signingKey = "~/.ssh/id_ed25519.pub";
+      gpg = {
+        format = "ssh";
+        ssh.allowedSignersFile = "~/.ssh/allowed_signers";
+      };
+    };
+  };
+
+  # Dotfiles management
+  home.file = {
+    # note, the SSH private key needs to be handled out of band still
+    ".ssh/id_ed25519.pub".source = ./../identity/id_ed25519.pub;
+    ".ssh/allowed_signers".text = "* ${builtins.readFile ./../identity/id_ed25519.pub }";
+  };
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";

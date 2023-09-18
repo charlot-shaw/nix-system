@@ -6,6 +6,7 @@
   lib,
   config,
   pkgs,
+  system,
   ...
 }: {
   # You can import other NixOS modules here
@@ -85,10 +86,10 @@
   hardware.pulseaudio.enable = true;
 
   # default packages
-  environment.systemPackages = with pkgs; [
-  wget
-  vim
-  firefox
+  environment.systemPackages = [
+  pkgs.wget
+  pkgs.vim
+  pkgs.firefox
   ];
 
   # User setup
@@ -96,7 +97,6 @@
     sparrows = {
       isNormalUser = true;
       openssh.authorizedKeys.keys = [
-        # TODO: Add your SSH public key(s) here, if you plan on using SSH to connect
       ];
       extraGroups = ["wheel" "networkmanager"];
     };

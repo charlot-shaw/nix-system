@@ -18,6 +18,12 @@
     # Shameless plug: looking for a way to nixify your themes and make
     # everything match nicely? Try nix-colors!
     nix-colors.url = "github:misterio77/nix-colors";
+
+    # Agenix, for secrets
+    agenix = {
+      url = "github:ryantm/agenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -25,6 +31,7 @@
     nixpkgs,
     home-manager,
     nix-colors,
+    agenix,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -64,6 +71,7 @@
         modules = [
           # > Our main nixos configuration file <
           ./nixos/configuration.nix
+          agenix.nixosModules.default
         ];
       };
     };
