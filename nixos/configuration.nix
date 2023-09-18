@@ -97,6 +97,7 @@
     sparrows = {
       isNormalUser = true;
       openssh.authorizedKeys.keys = [
+      (builtins.readFile ../identity/id_ed25519.pub)
       ];
       extraGroups = ["wheel" "networkmanager"];
     };

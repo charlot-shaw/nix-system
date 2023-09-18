@@ -60,10 +60,13 @@
     ripgrep
     gdu
     zoxide
+    element-desktop
     ];
 
-  # Enable home-manager and git
+  # Enable home-manager
   programs.home-manager.enable = true;
+
+
 
   programs.git = {
     enable = true;
@@ -90,7 +93,7 @@
   # Dotfiles management
   home.file = {
     # note, the SSH private key needs to be handled out of band still
-    ".ssh/id_ed25519.pub".source = ./../identity/id_ed25519.pub;
+    #".ssh/id_ed25519.pub".source = ./../identity/id_ed25519.pub;
     ".ssh/allowed_signers".text = "* ${builtins.readFile ./../identity/id_ed25519.pub }";
   };
 
