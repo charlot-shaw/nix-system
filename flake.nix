@@ -24,6 +24,11 @@
       url = "github:ryantm/agenix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    eza = {
+      url = "github:eza-community/eza";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -32,6 +37,8 @@
     home-manager,
     nix-colors,
     agenix,
+    eza,
+    doom-emacs,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -81,7 +88,7 @@
     homeConfigurations = {
       "sparrows@perch" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
-        extraSpecialArgs = {inherit inputs outputs;};
+        extraSpecialArgs = {inherit inputs outputs nix-colors;};
         modules = [
           # > Our main home-manager configuration file <
           ./home-manager/home.nix

@@ -7,6 +7,8 @@
   config,
   pkgs,
   nix-colors,
+  eza,
+  doom-emacs,
   ...
 }: {
   # You can import other home-manager modules here
@@ -19,6 +21,9 @@
 
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
+    ./vscode.nix
+
+    ./terminal.nix
   ];
 
   nixpkgs = {
@@ -60,41 +65,54 @@
     ripgrep
     gdu
     zoxide
+    direnv
+    libsForQt5.kate
+    logseq
+
+    # Comms
     element-desktop
-    ];
+    discord
+    telegram-desktop
+  ];
 
   # Enable home-manager
   programs.home-manager.enable = true;
 
+  colorScheme = nix-colors.colorSchemes.everforest;
 
+  # Programs configurations
 
-  programs.git = {
-    enable = true;
-    userEmail = "hello@sparrows.dev";
-    userName = "Charlot Shaw";
-    difftastic.enable = true;
+  programs = {
+    git = {
+      enable = true;
+      userEmail = "hello@sparrows.dev";
+      userName = "Charlot Shaw";
+      difftastic.enable = true;
 
-    extraConfig = {
-      rerere.enable = true;
+      extraConfig = {
+        rerere.enable = true;
+        diff.algorithm = "patience";
+        pull.rebase = true;
 
-      diff.algorithm = "patience";
-
-      pull.rebase = true;
-
-      commit.gpgsign = true;
-      user.signingKey = "~/.ssh/id_ed25519.pub";
-      gpg = {
-        format = "ssh";
-        ssh.allowedSignersFile = "~/.ssh/allowed_signers";
+        commit.gpgsign = true;
+        user.signingKey = "~/.ssh/id_ed25519.pub";
+        gpg = {
+          format = "ssh";
+          ssh.allowedSignersFile = "~/.ssh/allowed_signers";
+        };
       };
     };
   };
 
+  # Service configurations
+
   # Dotfiles management
   home.file = {
     # note, the SSH private key needs to be handled out of band still
-    #".ssh/id_ed25519.pub".source = ./../identity/id_ed25519.pub;
-    ".ssh/allowed_signers".text = "* ${builtins.readFile ./../identity/id_ed25519.pub }";
+    # This is copied in so that non-ssh daemon can read it.
+    # See https://search.nixos.org/options?channel=unstable&show=users.users.%3Cname%3E.openssh.authorizedKeys.keyFiles&from=0&size=50&sort=relevance&type=packages&query=users.users.%3Cname%3E.openssh
+    ".ssh/id_ed25519.pub".source = ./../identity/id_ed25519.pub;
+    ".ssh/allowed_signers".text = "* ${builtins.readFile ./../identity/id_ed25519.pub}";
   };
 
   # Nicely reload system units when changing configs

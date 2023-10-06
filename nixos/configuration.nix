@@ -7,6 +7,7 @@
   config,
   pkgs,
   system,
+  agenix,
   ...
 }: {
   # You can import other NixOS modules here
@@ -66,6 +67,8 @@
     };
   };
 
+  # secrets
+  age.secrets.syncthing_mainframe_id.file = ../secrets/syncthing_mainframe_id.age;
 
   networking.hostName = "perch";
   networking.networkmanager.enable = true;
@@ -74,12 +77,18 @@
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   i18n.defaultLocale = "en_US.UTF-8";
 
   # graphical stuff
-  services.xserver.enable = true;
-  services.xserver.desktopManager.plasma5.enable = true;
+  services.xserver = {
+    enable = true;
+    layout = "us,us";
+    xkbVariant = ",colemak_dh";
+    xkbOptions = "grp:rctrl_rshift_toggle,grp_led:caps,caps:backspace";
+    desktopManager.plasma5.enable = true;
+  };
 
   # sound
   sound.enable = true;
@@ -87,19 +96,46 @@
 
   # default packages
   environment.systemPackages = [
-  pkgs.wget
-  pkgs.vim
-  pkgs.firefox
+    pkgs.wget
+    pkgs.vim
+    pkgs.firefox
   ];
+
+  # Shells
+  # see https://nixos.wiki/wiki/Command_Shell
+
+  environment.shells = with pkgs; [bash fish];
+  programs.fish.enable = true;
 
   # User setup
   users.users = {
     sparrows = {
       isNormalUser = true;
-      openssh.authorizedKeys.keys = [
-      (builtins.readFile ../identity/id_ed25519.pub)
+      shell = pkgs.fish;
+      # SSH private keys are handled out of band for the moment.
+      openssh.authorizedKeys.keyFiles = [
+        ../identity/id_ed25519.pub
       ];
       extraGroups = ["wheel" "networkmanager"];
+    };
+  };
+  # Syncthing setup, done here because home-manager doesn't allow the deep configuration I want.
+
+  services.syncthing = {
+    enable = true;
+    user = "sparrows";
+    overrideDevices = true;
+    overrideFolders = true;
+    dataDir = "/home/sparrows/core";
+    configDir = "/home/sparrows/.config/syncthing";
+    devices = {
+      "mainframe" = {id = "6AWZK6A-62ODETB-LGYIFG4-XQSYD5V-4NB6B5C-EADRHVM-DV2M4B3-3IJAXAH";};
+    };
+    folders = {
+      "ngjiq-utdkh" = {
+        path = "/home/sparrows/core";
+        devices = ["mainframe"];
+      };
     };
   };
 
@@ -107,10 +143,10 @@
   # Feel free to remove if you don't need it.
   services.openssh = {
     enable = true;
-    # Forbid root login through SSH.
-    permitRootLogin = "no";
-    # Use keys only. Remove if you want to SSH using password (not recommended)
-    passwordAuthentication = false;
+    settings = {
+      PermitRootLogin = "no";
+      PasswordAuthentication = false;
+    };
   };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
