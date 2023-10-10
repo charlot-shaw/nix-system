@@ -68,7 +68,6 @@
   };
 
   # secrets
-  age.secrets.syncthing_mainframe_id.file = ../secrets/syncthing_mainframe_id.age;
 
   networking.hostName = "perch";
   networking.networkmanager.enable = true;
@@ -148,6 +147,8 @@
       PasswordAuthentication = false;
     };
   };
+
+  programs.ssh.startAgent = true;
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "23.05";
