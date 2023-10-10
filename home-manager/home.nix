@@ -24,6 +24,8 @@
     ./vscode.nix
 
     ./terminal.nix
+
+    ./gaming.nix
   ];
 
   nixpkgs = {
@@ -66,6 +68,8 @@
     gdu
     zoxide
     direnv
+    htop
+
     libsForQt5.kate
     logseq
 
@@ -73,6 +77,7 @@
     element-desktop
     discord
     telegram-desktop
+    tuba
   ];
 
   # Enable home-manager

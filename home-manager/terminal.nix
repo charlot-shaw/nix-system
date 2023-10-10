@@ -13,8 +13,8 @@
     };
 
     fish = {
-    # TODO integrate with nix-colors.
-    # Ref https://nix-community.github.io/home-manager/options.html#opt-programs.fish.enable
+      # TODO integrate with nix-colors.
+      # Ref https://nix-community.github.io/home-manager/options.html#opt-programs.fish.enable
       enable = true;
       interactiveShellInit = "zoxide init fish | source";
       plugins = [
