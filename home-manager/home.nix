@@ -26,6 +26,8 @@
     ./terminal.nix
 
     ./gaming.nix
+
+    ./hyprland.nix
   ];
 
   nixpkgs = {

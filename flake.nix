@@ -19,6 +19,11 @@
     # everything match nicely? Try nix-colors!
     nix-colors.url = "github:misterio77/nix-colors";
 
+    hyprland = {
+      url = "github:Hyprwm/Hyprland";
+      # hyprland uses a custom cachix, setup in nixos/configuration.nix
+    };
+
     # Agenix, for secrets
     agenix = {
       url = "github:ryantm/agenix";
@@ -39,6 +44,7 @@
     agenix,
     eza,
     doom-emacs,
+    hyprland,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -92,6 +98,9 @@
         modules = [
           # > Our main home-manager configuration file <
           ./home-manager/home.nix
+
+          hyprland.homeManagerModules.default
+          # {wayland.windowManager.hyprland.enable =true;}
         ];
       };
     };

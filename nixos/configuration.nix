@@ -64,6 +64,12 @@
       experimental-features = "nix-command flakes";
       # Deduplicate and optimize nix store
       auto-optimise-store = true;
+
+      # Substitute cache for hyprland
+      substituters = ["https://hyprland.cachix.org"];
+
+      trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
+
     };
   };
 
@@ -81,13 +87,13 @@
   i18n.defaultLocale = "en_US.UTF-8";
 
   # graphical stuff
-  services.xserver = {
-    enable = true;
-    layout = "us,us";
-    xkbVariant = ",colemak_dh";
-    xkbOptions = "grp:rctrl_rshift_toggle,grp_led:caps,caps:backspace";
-    desktopManager.plasma5.enable = true;
-  };
+  #services.xserver = {
+  #  enable = true;
+  #  layout = "us,us";
+  #  xkbVariant = ",colemak_dh";
+  #  xkbOptions = "grp:rctrl_rshift_toggle,grp_led:caps,caps:backspace";
+  #  desktopManager.plasma5.enable = true;
+  #};
 
   # sound
   sound.enable = true;
@@ -149,6 +155,7 @@
   };
 
   programs.ssh.startAgent = true;
+  programs.hyprland.enable = true;
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "23.05";
