@@ -1,0 +1,40 @@
+{
+ :deps {io.github.lispyclouds/bblgum {:git/sha "1d4de3d49b84f64d1b71930fa1161f8d2622a4d9"}}
+ :tasks {
+         :init (require '[bblgum.core :as b])
+         -conf-dir "/home/sparrows/nix-conf/"
+         -host "perch"
+         -user "sparrows"
+         -is-root (let [result  (shell {:out :string} "id -u")
+                        user-id (:out result)]
+                    (if (not (= user-id "0\n"))
+                      (do
+                        (println "Not running with necessary privileges")
+                        (System/exit 1))))
+         bump-flake {
+                     :doc "Updates the flake lock file."
+                     :depends [-conf-dir] 
+                     :task  (b/gum :spin ["nix" "flake" "update" (format "%s/flake.nix" -conf-dir)])}
+         
+         update-system {
+                        :doc "Applies the system-wide nixos configuration."
+                        :depends [-is-root -conf-dir -host]
+                        :task (b/gum :spin
+                               [ "nixos-rebuild" "switch" "--flake" (format "%sflake.nix#%s" -conf-dir -host)]  
+                               :title (format "Updating %s..." -host))}
+         
+         update-home {
+                      :doc "Applies the home-manager profile."
+                      :depends [-conf-dir -host -user]
+                      :task (b/gum :spin 
+                                   ["home-manager" "switch" "--flake" (format "%sflake.nix#%s@%s" -conf-dir -user -host)]
+                                   :title (format "Updating home for %s... " -user))}
+         bump-all {
+                   :doc "Updates the flake.lock and then rebuilds the whole system."
+                   :depends [-is-root]
+                   :task (do 
+                           (run 'bump-flake)
+                           (run 'update-system)
+                           (run 'update-home))}
+         }
+ }
