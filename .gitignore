@@ -1,1 +1,4 @@
 *.kate-swp
+*.clj-kondo/*
+*.calva/*
+*.lsp/*
