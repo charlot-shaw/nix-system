@@ -67,8 +67,6 @@
     };
   };
 
-  # secrets
-
   networking.hostName = "perch";
   networking.networkmanager.enable = true;
 
@@ -123,7 +121,7 @@
 
   services.tailscale = {
     enable = true;
-    # https://github.com/tailscale/tailscale/issues/4254 
+    # https://github.com/tailscale/tailscale/issues/4254
     # keep an eye on this if Tailscale acts up.
   };
 
@@ -145,6 +143,17 @@
         devices = ["mainframe"];
       };
     };
+  };
+
+  # Secrets for syncthing
+  age.secrets.st_key_pem = {
+    file = ../secrets/st_key_pem.age;
+    path = "/home/sparrows/.config/syncthing/key.pem";
+  };
+
+  age.secrets.st_https_key_pem = {
+    file = ../secrets/st_https_key_pem.age;
+    path = "/home/sparrows/.config/syncthing/https-key.pem";
   };
 
   # This setups a SSH server. Very important if you're setting up a headless system.

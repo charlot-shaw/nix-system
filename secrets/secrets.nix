@@ -11,5 +11,8 @@ let
 in {
   # for each desired secret, put an entry like so
   # "somefile.age".publicKeys = [charlot perch]
-  # Then use the agenix cli to write that secret securley into a file.
+  # Then use the agenix cli to write that secret securely into a file.
+
+  "st_key_pem.age".publicKeys = [perch];
+  "st_https_key_pem.age".publicKeys = [perch];
 }
