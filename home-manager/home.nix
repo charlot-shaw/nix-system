@@ -69,6 +69,9 @@
     zoxide
     direnv
     htop
+    gum
+    babashka
+    jre8
 
     libsForQt5.kate
     logseq
