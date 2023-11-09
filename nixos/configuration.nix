@@ -118,6 +118,15 @@
       extraGroups = ["wheel" "networkmanager"];
     };
   };
+
+  # Tailscale setup
+
+  services.tailscale = {
+    enable = true;
+    # https://github.com/tailscale/tailscale/issues/4254 
+    # keep an eye on this if Tailscale acts up.
+  };
+
   # Syncthing setup, done here because home-manager doesn't allow the deep configuration I want.
 
   services.syncthing = {
