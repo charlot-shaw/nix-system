@@ -14,5 +14,5 @@ in {
   # Then use the agenix cli to write that secret securely into a file.
 
   "st_key_pem.age".publicKeys = [perch];
-  "st_https_key_pem.age".publicKeys = [perch];
+  "st_cert_pem.age".publicKeys = [perch];
 }

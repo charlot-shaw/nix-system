@@ -151,9 +151,9 @@
     path = "/home/sparrows/.config/syncthing/key.pem";
   };
 
-  age.secrets.st_https_key_pem = {
-    file = ../secrets/st_https_key_pem.age;
-    path = "/home/sparrows/.config/syncthing/https-key.pem";
+  age.secrets.st_cert_pem = {
+    file = ../secrets/st_cert_pem.age;
+    path = "/home/sparrows/.config/syncthing/cert.pem";
   };
 
   # This setups a SSH server. Very important if you're setting up a headless system.
