@@ -9,6 +9,7 @@
   pkgs,
   system,
   agenix,
+  ...
 }: {
   imports = [
     # Include the results of the hardware scan.
@@ -16,6 +17,10 @@
     # Include tweaks for hardware
     inputs.hardware.nixosModules.common-cpu-amd
     inputs.hardware.nixosModules.common-gpu-amd
+
+    ../common/ssh.nix
+    ../common/configuration_structure.nix
+    ../common/utilities.nix
   ];
 
   # Bootloader.
@@ -108,10 +113,8 @@
     wget
     ripgrep
     git
-    bats
+    bat
   ];
-
-  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -122,9 +125,6 @@
   # };
 
   # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
