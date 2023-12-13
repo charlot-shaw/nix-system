@@ -22,50 +22,8 @@
     # ./users.nix
 
     # Import your generated (nixos-generate-config) hardware configuration
-    ./hardware-configuration.nix
+    ./perch_hardware.nix
   ];
-
-  nixpkgs = {
-    # You can add overlays here
-    overlays = [
-      # Add overlays your own flake exports (from overlays and pkgs dir):
-      outputs.overlays.additions
-      outputs.overlays.modifications
-      outputs.overlays.unstable-packages
-
-      # You can also add overlays exported from other flakes:
-      # neovim-nightly-overlay.overlays.default
-
-      # Or define it inline, for example:
-      # (final: prev: {
-      #   hi = final.hello.overrideAttrs (oldAttrs: {
-      #     patches = [ ./change-hello-to-hi.patch ];
-      #   });
-      # })
-    ];
-    # Configure your nixpkgs instance
-    config = {
-      # Disable if you don't want unfree packages
-      allowUnfree = true;
-    };
-  };
-
-  nix = {
-    # This will add each flake input as a registry
-    # To make nix3 commands consistent with your flake
-    registry = lib.mapAttrs (_: value: {flake = value;}) inputs;
-
-    # This will additionally add your inputs to the system's legacy channels
-    # Making legacy nix commands consistent as well, awesome!
-    nixPath = lib.mapAttrsToList (key: value: "${key}=${value.to.path}") config.nix.registry;
-
-    settings = {
-      # Enable flakes and new 'nix' command
-      experimental-features = "nix-command flakes";
-      # Deduplicate and optimize nix store
-      auto-optimise-store = true;
-    };
-  };
 
   networking.hostName = "perch";
   networking.networkmanager.enable = true;
@@ -111,7 +69,7 @@
       shell = pkgs.fish;
       # SSH private keys are handled out of band for the moment.
       openssh.authorizedKeys.keyFiles = [
-        ../identity/id_ed25519.pub
+        ../../../identity/id_ed25519.pub
       ];
       extraGroups = ["wheel" "networkmanager"];
     };
@@ -147,12 +105,12 @@
 
   # Secrets for syncthing
   age.secrets.st_key_pem = {
-    file = ../secrets/st_key_pem.age;
+    file = ../../../secrets/st_key_pem.age;
     path = "/home/sparrows/.config/syncthing/key.pem";
   };
 
   age.secrets.st_cert_pem = {
-    file = ../secrets/st_cert_pem.age;
+    file = ../../../secrets/st_cert_pem.age;
     path = "/home/sparrows/.config/syncthing/cert.pem";
   };
 

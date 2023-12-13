@@ -77,7 +77,15 @@
         specialArgs = {inherit inputs outputs;};
         modules = [
           # > Our main nixos configuration file <
-          ./nixos/configuration.nix
+          ./nixos/hosts/perch/perch.nix
+          agenix.nixosModules.default
+        ];
+      };
+
+      bough = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        modules = [
+          ./nixos/hosts/bough/bough.nix
           agenix.nixosModules.default
         ];
       };
