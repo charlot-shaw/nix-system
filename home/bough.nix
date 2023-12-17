@@ -1,0 +1,14 @@
+{
+  inputs,
+  outputs,
+  ...
+}: {
+  imports = [
+    ./base.nix
+    ./features/terminal.nix
+    ./features/gaming.nix
+    ./features/vscode.nix
+    ./features/comms.nix
+    # ./features/hyprland.nix
+  ];
+}

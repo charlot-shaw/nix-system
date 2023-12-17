@@ -16,7 +16,6 @@
       # TODO integrate with nix-colors.
       # Ref https://nix-community.github.io/home-manager/options.html#opt-programs.fish.enable
       enable = true;
-      interactiveShellInit = "zoxide init fish | source";
       plugins = [
         {
           name = "foreign env";
@@ -30,8 +29,19 @@
       ];
     };
 
+    zoxide = {
+      enable = true;
+      enableBashIntegration = true;
+      enableFishIntegration = true;
+    };
+
     ssh = {
       enable = true;
+    };
+
+    direnv = {
+      enable = true;
+      nix-direnv.enable = true;
     };
 
     starship = {
