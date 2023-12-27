@@ -9,6 +9,8 @@
     ./features/gaming.nix
     ./features/vscode.nix
     ./features/comms.nix
-    # ./features/hyprland.nix
+    ./features/hyprland.nix
+    ./features/swaylock.nix
+    ./features/office.nix
   ];
 }

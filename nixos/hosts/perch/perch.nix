@@ -23,6 +23,7 @@
 
     # Import your generated (nixos-generate-config) hardware configuration
     ./perch_hardware.nix
+    ../common/user_sparrows.nix
   ];
 
   networking.hostName = "perch";
@@ -61,19 +62,6 @@
 
   environment.shells = with pkgs; [bash fish];
   programs.fish.enable = true;
-
-  # User setup
-  users.users = {
-    sparrows = {
-      isNormalUser = true;
-      shell = pkgs.fish;
-      # SSH private keys are handled out of band for the moment.
-      openssh.authorizedKeys.keyFiles = [
-        ../../../identity/id_ed25519.pub
-      ];
-      extraGroups = ["wheel" "networkmanager"];
-    };
-  };
 
   # Tailscale setup
 

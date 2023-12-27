@@ -47,10 +47,16 @@
     starship = {
       enable = true;
       enableFishIntegration = true;
+      enableBashIntegration = true;
       settings = {
         add_newline = false;
         # TODO figure out prompt preferences
         #format = "[:::](bold green)([:::](bold green)$hostname) ([:::](bold green)$username) $nixshell $directory\n>";
+
+        character = {
+          success_symbol = "[❯](bold green)";
+          error_symbol = "[✖](bold red)";
+        };
       };
     };
 

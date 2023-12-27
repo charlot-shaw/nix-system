@@ -51,5 +51,5 @@ in {
     };
   };
 
-  colorscheme = lib.mkDefault colorSchemes.everforest;
+  colorscheme = lib.mkDefault colorSchemes.sandcastle;
 }

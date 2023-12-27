@@ -21,8 +21,12 @@
     ../common/ssh.nix
     ../common/configuration_structure.nix
     ../common/utilities.nix
+
     ../common/hyprland.nix
+    ../common/swaylock.nix
+
     ../common/gaming.nix
+    ../common/user_sparrows.nix
 
     inputs.home-manager.nixosModules.home-manager
   ];
@@ -63,7 +67,7 @@
   services.xserver.enable = true;
 
   # Enable the Budgie Desktop environment.
-  services.xserver.displayManager.lightdm.enable = true;
+  services.xserver.displayManager.sddm.enable = true;
   services.xserver.desktopManager.budgie.enable = true;
 
   # Configure keymap in X11
@@ -95,18 +99,6 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.sparrows = {
-    isNormalUser = true;
-    description = "Charlot Shaw";
-    extraGroups = ["networkmanager" "wheel"];
-    packages = with pkgs; [
-      firefox
-      vscode
-      #  thunderbird
-    ];
-  };
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -117,6 +109,7 @@
     wget
     ripgrep
     bat
+    pavucontrol
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

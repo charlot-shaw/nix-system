@@ -13,5 +13,7 @@
     unzip
     wget
     curl
+    killall
+    htop
   ];
 }
