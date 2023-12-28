@@ -13,5 +13,6 @@
     ./features/swaylock.nix
     ./features/wpaperd.nix
     ./features/office.nix
+    ./features/art.nix
   ];
 }
