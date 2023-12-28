@@ -5,6 +5,9 @@
       # Theme
       workbench.colorTheme = "Everforest Dark";
 
+      # Git
+      "git.autofetch" = true;
+
       # Calva
       "calva.evaluationSendCodeToOutputWindow" = true;
       "calva.referencesCodeLens.enabled" = true;
