@@ -11,6 +11,7 @@
     ./features/comms.nix
     ./features/hyprland.nix
     ./features/swaylock.nix
+    ./features/wpaperd.nix
     ./features/office.nix
   ];
 }
