@@ -26,6 +26,7 @@ in {
 
   home.packages = with pkgs; [
     cliphist
+    font-awesome
   ];
 
   wayland.windowManager.hyprland = {
@@ -89,7 +90,10 @@ in {
       exec-once = [
         "$terminal"
         "$bar"
+        "wpaperd"
+        
         "discord"
+        "telegram-desktop"
       ];
 
       exec = [
@@ -107,6 +111,11 @@ in {
           "$mod, right, movefocus, r"
           "$mod, up, movefocus, u"
           "$mod, down, movefocus, d"
+
+          "$mod SHIFT, left, swapwindow, l"
+          "$mod SHIFT, right, swapwindow, r"
+          "$mod SHIFT, up, swapwindow, u"
+          "$mod SHIFT, down, swapwindow, d"
         ]
         ++ workspaces;
 
