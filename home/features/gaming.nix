@@ -3,5 +3,6 @@
     steam
     nvtop
     mangohud
+    vulkan-tools
   ];
 }
