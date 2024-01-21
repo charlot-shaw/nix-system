@@ -1,5 +1,5 @@
-{...}: {
-    home.packages = [
-        logseq
-    ];
+{pkgs, ...}: {
+  home.packages = with pkgs; [
+    logseq
+  ];
 }
