@@ -14,5 +14,6 @@
     ./features/wpaperd.nix
     ./features/office.nix
     ./features/art.nix
+    ./features/pkm.nix
   ];
 }
