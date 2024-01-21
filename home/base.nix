@@ -46,10 +46,11 @@ in {
     };
 
     file = {
+      "README.md".source = ../README.md;
       ".ssh/id_ed25519.pub".source = ../identity/id_ed25519.pub;
       ".ssh/allowed_signers".text = "* ${builtins.readFile ../identity/id_ed25519.pub}";
     };
   };
 
-  colorscheme = lib.mkDefault colorSchemes.sandcastle;
+  colorscheme = lib.mkDefault colorSchemes.everforest;
 }
