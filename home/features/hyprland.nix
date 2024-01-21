@@ -91,7 +91,7 @@ in {
         "$terminal"
         "$bar"
         "wpaperd"
-        
+
         "discord"
         "telegram-desktop"
       ];
