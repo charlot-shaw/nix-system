@@ -21,6 +21,7 @@
     ../common/ssh.nix
     ../common/configuration_structure.nix
     ../common/utilities.nix
+    ../common/tailscale.nix
 
     ../common/hyprland.nix
     ../common/swaylock.nix
@@ -110,6 +111,10 @@
     ripgrep
     bat
     pavucontrol
+
+    cinnamon.nemo-with-extensions
+    cinnamon.xreader
+    vlc
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
