@@ -37,3 +37,4 @@ Use the theme manager wherever applicable.
 * Finish work on base clojure template.
 * Nixify further hosts.
 * Figure out SSH keys and how they should be distributed accross hosts.
+  * This also includes how the hosts own keys should be handled.
