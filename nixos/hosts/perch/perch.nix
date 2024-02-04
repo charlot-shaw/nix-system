@@ -27,6 +27,7 @@
     ../common/configuration_structure.nix
     ../common/bluetooth.nix
     ../common/ssh.nix
+    ../common/utilities.nix
   ];
 
   networking.hostName = "perch";

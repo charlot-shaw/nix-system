@@ -6,6 +6,7 @@
   # Default utility packages.
 
   environment.systemPackages = with pkgs; [
+    eza
     ripgrep
     gdu
     bat

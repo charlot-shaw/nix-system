@@ -25,11 +25,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    eza = {
-      url = "github:eza-community/eza";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     hyprland = {
       url = "github:hyprwm/Hyprland";
     };
@@ -42,7 +37,6 @@
     home-manager,
     nix-colors,
     agenix,
-    eza,
     hyprland,
     ...
   } @ inputs: let
