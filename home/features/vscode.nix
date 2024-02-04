@@ -20,6 +20,8 @@
       bbenoist.nix
       mkhl.direnv
       kahole.magit
+      ms-vscode-remote.remote-ssh
+      tailscale.vscode-tailscale
     ];
   };
 }
