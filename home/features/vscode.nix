@@ -1,9 +1,21 @@
 {pkgs, ...}: {
   programs.vscode = {
     enable = true;
+    mutableExtensionsDir = false;
+
+    extensions = with pkgs.vscode-extensions; [
+      mvllow.rose-pine
+      betterthantomorrow.calva
+      bbenoist.nix
+      mkhl.direnv
+      kahole.magit
+      ms-vscode-remote.remote-ssh
+      tailscale.vscode-tailscale
+    ];
+
     userSettings = {
       # Theme
-      workbench.colorTheme = "Everforest Dark";
+      #workbench.colorTheme = "Rosé Pine";
 
       # Git
       "git.autofetch" = true;
@@ -15,13 +27,16 @@
       "calva.useTestExplorer" = true;
       "calva.highlight.rainbowIndentGuides" = true;
     };
-    extensions = with pkgs.vscode-extensions; [
-      betterthantomorrow.calva
-      bbenoist.nix
-      mkhl.direnv
-      kahole.magit
-      ms-vscode-remote.remote-ssh
-      tailscale.vscode-tailscale
-    ];
+
+    userTasks = {
+      version = "2.0.0";
+      tasks = [
+        {
+          type = "shell";
+          label = "Bump homemanager";
+          command = "home-manager switch --flake .#$USER@$hostname";
+        }
+      ];
+    };
   };
 }
