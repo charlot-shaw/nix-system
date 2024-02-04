@@ -7,8 +7,8 @@
     kitty = {
       enable = true;
       settings = {
-        foreground = "#${config.colorScheme.colors.base05}";
-        background = "#${config.colorScheme.colors.base00}";
+        foreground = "#${config.colorScheme.palette.base05}";
+        background = "#${config.colorScheme.palette.base00}";
       };
     };
 

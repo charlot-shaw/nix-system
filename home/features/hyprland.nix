@@ -55,8 +55,8 @@ in {
         layout = "dwindle";
         resize_on_border = true;
 
-        "col.inactive_border" = "rgb(${config.colorScheme.colors.base00})";
-        "col.active_border" = "rgb(${config.colorScheme.colors.base08}) rgb(${config.colorScheme.colors.base09}) 20deg";
+        "col.inactive_border" = "rgb(${config.colorScheme.palette.base00})";
+        "col.active_border" = "rgb(${config.colorScheme.palette.base08}) rgb(${config.colorScheme.palette.base09}) 20deg";
       };
 
       decoration = {
