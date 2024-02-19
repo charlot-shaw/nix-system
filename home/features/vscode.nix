@@ -11,6 +11,7 @@
       kahole.magit
       ms-vscode-remote.remote-ssh
       tailscale.vscode-tailscale
+      github.vscode-github-actions
     ];
 
     userSettings = {
