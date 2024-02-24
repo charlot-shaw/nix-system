@@ -10,6 +10,7 @@
       extraGroups = ["wheel" "networkmanager"];
       packages = with pkgs; [
         firefox
+        audacity
       ];
     };
   };

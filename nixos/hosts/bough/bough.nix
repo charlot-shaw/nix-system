@@ -29,6 +29,8 @@
     ../common/gaming.nix
     ../common/user_sparrows.nix
 
+    ../common/syncthing.nix
+
     inputs.home-manager.nixosModules.home-manager
   ];
 

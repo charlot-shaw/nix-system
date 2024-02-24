@@ -15,5 +15,6 @@
     ./features/office.nix
     ./features/art.nix
     ./features/pkm.nix
+    ./features/screenshot.nix
   ];
 }
