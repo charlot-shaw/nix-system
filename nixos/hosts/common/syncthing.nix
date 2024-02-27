@@ -1,10 +1,10 @@
 {...}: {
-    services.syncthing = {
-        enable = true;
+  services.syncthing = {
+    enable = true;
 
-        settings.folders.core = {
-            enable = true;
-            path = "~/core_test";
-        };
+    settings.folders.core = {
+      enable = true;
+      path = "~/core_test";
     };
+  };
 }

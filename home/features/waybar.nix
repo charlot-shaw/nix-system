@@ -6,7 +6,7 @@ in {
     enable = true;
     settings = {
       mainbar = {
-        modules-left = ["clock" "hyprland/workspaces" "idle_inhibitor" ];
+        modules-left = ["clock" "hyprland/workspaces" "idle_inhibitor"];
         modules-right = ["pulseaudio" "network" "tray"];
         layer = "top";
 
@@ -40,11 +40,11 @@ in {
         };
 
         idle_inhibitor = {
-            format = "{icon}";
-            format-icons = {
-                activated = "";
-                deactivated = "";
-            };
+          format = "{icon}";
+          format-icons = {
+            activated = "";
+            deactivated = "";
+          };
         };
       };
     };
