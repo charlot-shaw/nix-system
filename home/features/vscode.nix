@@ -20,6 +20,7 @@
 
       # Git
       "git.autofetch" = true;
+      "git.confirmSync" = false;
 
       # Calva
       "calva.evaluationSendCodeToOutputWindow" = true;
