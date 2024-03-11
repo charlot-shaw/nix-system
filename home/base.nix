@@ -47,8 +47,8 @@ in {
 
     file = {
       "README.md".source = ../README.md;
-      ".ssh/id_ed25519.pub".source = ../identity/id_ed25519.pub;
-      ".ssh/allowed_signers".text = "* ${builtins.readFile ../identity/id_ed25519.pub}";
+      ".ssh/id_ed25519.pub".source = ../resources/keys/sparrows_id_ed25519.pub;
+      ".ssh/allowed_signers".text = "* ${builtins.readFile ../resources/keys/sparrows_id_ed25519.pub}";
     };
   };
 

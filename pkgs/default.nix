@@ -2,4 +2,5 @@
 # You can build them using 'nix build .#example'
 pkgs: {
   # example = pkgs.callPackage ./example { };
+  sddm-theme = pkgs.callPackage ./sugar_dark_sddm_theme.nix {};
 }

@@ -25,6 +25,7 @@
 
     ../common/hyprland.nix
     ../common/swaylock.nix
+    ../common/sddm.nix
 
     ../common/gaming.nix
     ../common/user_sparrows.nix
@@ -37,6 +38,8 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  # Use latest kernel
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking.hostName = "bough"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -70,14 +73,8 @@
   services.xserver.enable = true;
 
   # Enable the Budgie Desktop environment.
-  services.xserver.displayManager.sddm.enable = true;
   services.xserver.desktopManager.budgie.enable = true;
 
-  # Configure keymap in X11
-  services.xserver = {
-    layout = "us";
-    xkbVariant = "";
-  };
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
