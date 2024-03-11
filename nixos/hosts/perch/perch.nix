@@ -28,6 +28,7 @@
     ../common/bluetooth.nix
     ../common/ssh.nix
     ../common/utilities.nix
+    ../common/pen_tablet.nix
   ];
 
   networking.hostName = "perch";
@@ -79,7 +80,7 @@
 
   services.syncthing = {
     enable = true;
-    user = "sparrows";
+    user = "stasis";
     overrideDevices = true;
     overrideFolders = true;
     dataDir = "/home/sparrows/core";
@@ -89,20 +90,24 @@
     };
     folders = {
       "ngjiq-utdkh" = {
+        label = "Core synchronization";
         path = "/home/sparrows/core";
         devices = ["mainframe"];
       };
     };
   };
 
+  # Used for steam
+  hardware.opengl.driSupport32Bit = true;
+
   # Secrets for syncthing
   age.secrets.st_key_pem = {
-    file = ../../../secrets/st_key_pem.age;
+    file = ../../../resources/secrets/st_key_pem.age;
     path = "/home/sparrows/.config/syncthing/key.pem";
   };
 
   age.secrets.st_cert_pem = {
-    file = ../../../secrets/st_cert_pem.age;
+    file = ../../../resources/secrets/st_cert_pem.age;
     path = "/home/sparrows/.config/syncthing/cert.pem";
   };
 

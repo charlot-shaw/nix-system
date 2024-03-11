@@ -31,6 +31,8 @@
     ./features/git.nix
 
     ./features/comms.nix
+
+    ./features/art.nix
   ];
 
   # Add stuff for your user as you see fit:
