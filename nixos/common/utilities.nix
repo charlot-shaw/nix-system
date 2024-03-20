@@ -7,7 +7,7 @@
 
   environment.systemPackages = with pkgs; [
     vim
-    tar
+    gnutar
     eza
     ripgrep
     gdu
