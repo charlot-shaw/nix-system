@@ -22,17 +22,17 @@
     # ./nvim.nix
     ./base.nix
 
-    ./features/vscode.nix
+    ./common/vscode.nix
 
-    ./features/terminal.nix
+    ./common/terminal.nix
 
-    ./features/gaming.nix
+    ./common/gaming.nix
 
-    ./features/git.nix
+    ./common/git.nix
 
-    ./features/comms.nix
+    ./common/comms.nix
 
-    ./features/art.nix
+    ./common/art.nix
   ];
 
   # Add stuff for your user as you see fit:
