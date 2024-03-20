@@ -29,6 +29,7 @@
     ../common/ssh.nix
     ../common/utilities.nix
     ../common/pen_tablet.nix
+    ../common/comin.nix
   ];
 
   networking.hostName = "perch";
