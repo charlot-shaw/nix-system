@@ -51,5 +51,13 @@
       # Don't complain if there are WIP changes.
       warn-dirty = false;
     };
+
+    gc = {
+      automatic = true;
+      randomizedDelaySec = "15m";
+      options = "--delete-older-than 30d";
+    };
   };
+
+  boot.loader.systemd-boot.configurationLimit = 5;
 }

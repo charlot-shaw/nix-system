@@ -19,6 +19,12 @@
     # everything match nicely? Try nix-colors!
     nix-colors.url = "github:misterio77/nix-colors";
 
+    #Comin, for updates
+    comin = {
+      url = "github:nlewo/comin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # Agenix, for secrets
     agenix = {
       url = "github:ryantm/agenix";
@@ -38,6 +44,7 @@
     nix-colors,
     agenix,
     hyprland,
+    comin,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -78,6 +85,7 @@
           # > Our main nixos configuration file <
           ./nixos/hosts/perch/perch.nix
           agenix.nixosModules.default
+          comin.nixosModules.comin
         ];
       };
 
@@ -86,6 +94,7 @@
         modules = [
           ./nixos/hosts/bough/bough.nix
           agenix.nixosModules.default
+          comin.nixosModules.comin
         ];
       };
     };
