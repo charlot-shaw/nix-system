@@ -6,9 +6,9 @@
   services.xserver.displayManager.sddm = {
     enable = true;
     wayland.enable = true;
-    theme = "${pkgs.callPackage ../../../pkgs/sugar_dark_sddm_theme.nix
+    theme = "${pkgs.callPackage ../../pkgs/sugar_dark_sddm_theme.nix
       {
-        background = "../../..resources/walls/mihael_stojcevic_sddm_backdrop.png";
+        background = "../..resources/walls/mihael_stojcevic_sddm_backdrop.png";
         accentColor = "red";
       }}";
   };
