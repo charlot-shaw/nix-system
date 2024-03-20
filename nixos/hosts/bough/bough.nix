@@ -19,7 +19,7 @@
     inputs.hardware.nixosModules.common-gpu-amd
 
     ../../common/default.nix
-    
+
     ../../common/tailscale.nix
 
     ../../common/hyprland.nix
@@ -104,10 +104,6 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    wget
-    ripgrep
-    bat
     pavucontrol
 
     cinnamon.nemo-with-extensions

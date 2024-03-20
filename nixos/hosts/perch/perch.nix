@@ -57,10 +57,8 @@
   hardware.pulseaudio.enable = true;
 
   # default packages
-  environment.systemPackages = [
-    pkgs.wget
-    pkgs.vim
-    pkgs.firefox
+  environment.systemPackages = with pkgs; [
+    firefox
   ];
 
   # Shells
