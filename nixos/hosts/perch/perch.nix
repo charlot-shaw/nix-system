@@ -23,13 +23,13 @@
 
     # Import your generated (nixos-generate-config) hardware configuration
     ./perch_hardware.nix
-    ../common/user_sparrows.nix
-    ../common/configuration_structure.nix
-    ../common/bluetooth.nix
-    ../common/ssh.nix
-    ../common/utilities.nix
-    ../common/pen_tablet.nix
-    ../common/comin.nix
+    ../../common/user_sparrows.nix
+    ../../common/configuration_structure.nix
+    ../../common/bluetooth.nix
+    ../../common/ssh.nix
+    ../../common/utilities.nix
+    ../../common/pen_tablet.nix
+    ../../common/comin.nix
   ];
 
   networking.hostName = "perch";
@@ -77,29 +77,6 @@
     # keep an eye on this if Tailscale acts up.
   };
 
-  # Syncthing setup, done here because home-manager doesn't allow the deep configuration I want.
-
-  services.syncthing = {
-    enable = true;
-    user = "stasis";
-    overrideDevices = true;
-    overrideFolders = true;
-    dataDir = "/home/sparrows/core";
-    configDir = "/home/sparrows/.config/syncthing";
-    devices = {
-      "mainframe" = {id = "6AWZK6A-62ODETB-LGYIFG4-XQSYD5V-4NB6B5C-EADRHVM-DV2M4B3-3IJAXAH";};
-    };
-    folders = {
-      "ngjiq-utdkh" = {
-        label = "Core synchronization";
-        path = "/home/sparrows/core";
-        devices = ["mainframe"];
-      };
-    };
-  };
-
-  # Used for steam
-  hardware.opengl.driSupport32Bit = true;
 
   # Secrets for syncthing
   age.secrets.st_key_pem = {

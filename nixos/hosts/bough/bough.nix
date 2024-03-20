@@ -18,19 +18,18 @@
     inputs.hardware.nixosModules.common-cpu-amd
     inputs.hardware.nixosModules.common-gpu-amd
 
-    ../common/ssh.nix
-    ../common/configuration_structure.nix
-    ../common/utilities.nix
-    ../common/tailscale.nix
+    ../../common/default.nix
+    
+    ../../common/tailscale.nix
 
-    ../common/hyprland.nix
-    ../common/swaylock.nix
-    ../common/sddm.nix
+    ../../common/hyprland.nix
+    ../../common/swaylock.nix
+    ../../common/sddm.nix
 
-    ../common/gaming.nix
-    ../common/user_sparrows.nix
+    ../../common/gaming.nix
+    ../../common/user_sparrows.nix
 
-    ../common/syncthing.nix
+    ../../common/syncthing.nix
 
     inputs.home-manager.nixosModules.home-manager
   ];
