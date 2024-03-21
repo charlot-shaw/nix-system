@@ -66,15 +66,6 @@
   environment.shells = with pkgs; [bash fish];
   programs.fish.enable = true;
 
-  # Tailscale setup
-
-  services.tailscale = {
-    enable = true;
-    # https://github.com/tailscale/tailscale/issues/4254
-    # keep an eye on this if Tailscale acts up.
-  };
-
-
   # Secrets for syncthing
   age.secrets.st_key_pem = {
     file = ../../../resources/secrets/st_key_pem.age;
