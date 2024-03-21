@@ -49,7 +49,6 @@
     jre8
 
     libsForQt5.kate
-    logseq
   ];
 
   # Nicely reload system units when changing configs
