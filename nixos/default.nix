@@ -1,5 +1,5 @@
 # All the NixOS configurations
 {
-  perch = import ./hosts/perch.nix;
-  bough = import ./hosts/bough.nix;
+  perch = import ./hosts/perch/perch.nix;
+  bough = import ./hosts/bough/bough.nix;
 }

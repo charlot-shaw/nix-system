@@ -19,6 +19,7 @@
     inputs.hardware.nixosModules.common-gpu-amd
 
     ../../common/default.nix
+    ../../../users/sparrows.nix
 
     ../../common/tailscale.nix
 
@@ -27,7 +28,6 @@
     ../../common/sddm.nix
 
     ../../common/gaming.nix
-    ../../common/user_sparrows.nix
 
     ../../common/syncthing.nix
 
@@ -52,7 +52,7 @@
 
   # Set your time zone.
   time.timeZone = "America/Chicago";
-  
+
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 

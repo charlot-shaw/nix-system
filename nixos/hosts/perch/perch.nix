@@ -23,13 +23,12 @@
 
     # Import your generated (nixos-generate-config) hardware configuration
     ./perch_hardware.nix
-    ../../common/user_sparrows.nix
-    ../../common/configuration_structure.nix
+    ../../common/default.nix
+
+    ../../../users/sparrows.nix
+
     ../../common/bluetooth.nix
-    ../../common/ssh.nix
-    ../../common/utilities.nix
     ../../common/pen_tablet.nix
-    ../../common/comin.nix
   ];
 
   networking.hostName = "perch";
