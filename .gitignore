@@ -1,5 +1,13 @@
+# Editor temp files
 *.kate-swp
+
+# Clojure specific folders
 *.clj-kondo/*
 *.calva/*
 *.lsp/*
 *.portal/*
+
+# Nix and envrc
+result/
+.envrc/*
+.direnv/*
