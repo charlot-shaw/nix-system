@@ -29,6 +29,8 @@
 
     ../../common/bluetooth.nix
     ../../common/pen_tablet.nix
+
+    ../../common/tailscale.nix
   ];
 
   networking.hostName = "perch";
