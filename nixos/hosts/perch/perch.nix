@@ -62,12 +62,6 @@
     firefox
   ];
 
-  # Shells
-  # see https://nixos.wiki/wiki/Command_Shell
-
-  environment.shells = with pkgs; [bash fish];
-  programs.fish.enable = true;
-
   # Secrets for syncthing
   age.secrets.st_key_pem = {
     file = ../../../resources/secrets/st_key_pem.age;

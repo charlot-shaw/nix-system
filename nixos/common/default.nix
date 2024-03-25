@@ -5,5 +5,6 @@
     ./ssh.nix
     ./comin.nix
     ./locale.nix
+    ./shells.nix
   ];
 }
