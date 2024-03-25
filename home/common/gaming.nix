@@ -5,5 +5,4 @@
     vulkan-tools
     steam
   ];
-
 }

@@ -59,7 +59,6 @@
   # Enable the Budgie Desktop environment.
   services.xserver.desktopManager.budgie.enable = true;
 
-
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
