@@ -97,6 +97,14 @@
           comin.nixosModules.comin
         ];
       };
+      taproot = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        modules = [
+          ./nixos/hosts/taproot/taproot.nix
+          agenix.nixosModules.default
+          comin.nixosModules.comin
+        ];
+      };
     };
 
     # Standalone home-manager configuration entrypoint
@@ -111,6 +119,12 @@
       "sparrows@bough" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         modules = [./home/bough.nix];
+        extraSpecialArgs = {inherit inputs outputs nix-colors;};
+      };
+
+      "sparrows@taproot" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        modules = [./home/taproot.nix];
         extraSpecialArgs = {inherit inputs outputs nix-colors;};
       };
     };

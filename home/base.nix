@@ -10,7 +10,7 @@
 in {
   imports = [
     # Every home installation has to have git, make it my config.
-    ./features/git.nix
+    ./common/git.nix
     inputs.nix-colors.homeManagerModule
   ];
 
