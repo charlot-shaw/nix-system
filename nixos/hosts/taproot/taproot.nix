@@ -14,6 +14,9 @@
 
     ../../../users/sparrows.nix
     ../../common/tailscale.nix
+
+    # Services
+    ./homepage.nix
   ];
 
   boot.loader.grub = {
