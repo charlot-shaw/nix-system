@@ -33,6 +33,8 @@
 
     ../../common/firefox.nix
 
+    ../../common/serve_nix_store.nix
+
     inputs.home-manager.nixosModules.home-manager
   ];
 

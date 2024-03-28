@@ -15,6 +15,8 @@
     ../../../users/sparrows.nix
     ../../common/tailscale.nix
 
+    ../../common/serve_nix_store.nix
+
     # Services
     ./homepage.nix
 
