@@ -1,4 +1,9 @@
 {config,...}:{
+    users.users.forge = {
+        isSystemUser = true;
+        createHome = true;
+        description "Nixos Build User"
+    }
     nix = {
         distributedBuilds = true;
         buildMachines = 
@@ -12,6 +17,7 @@
                 "benchmark"
                 "big-parallel"
                 "kvm"
+                "nixos-test"
             ];
           in [
             {
