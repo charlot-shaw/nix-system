@@ -18,5 +18,6 @@
     curl
     killall
     htop
+    tmux
   ];
 }
