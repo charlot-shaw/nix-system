@@ -17,7 +17,7 @@
 
     # Services
     ./homepage.nix
-    ./grafana.nix
+
   ];
 
   boot.loader.grub = {
