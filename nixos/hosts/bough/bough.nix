@@ -31,6 +31,8 @@
 
     ../../common/syncthing.nix
 
+    ../../common/firefox.nix
+
     inputs.home-manager.nixosModules.home-manager
   ];
 
