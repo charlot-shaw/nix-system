@@ -3,7 +3,7 @@
   config,
   ...
 }: {
-  services.xserver.displayManager.sddm = {
+  services.displayManager.sddm = {
     enable = true;
     wayland.enable = true;
     theme = "${pkgs.callPackage ../../pkgs/sugar_dark_sddm_theme.nix
