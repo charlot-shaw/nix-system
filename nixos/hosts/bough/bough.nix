@@ -33,6 +33,8 @@
 
     ../../common/firefox.nix
 
+    ../../common/docker.nix
+
     inputs.home-manager.nixosModules.home-manager
   ];
 
