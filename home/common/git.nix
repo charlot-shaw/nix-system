@@ -6,6 +6,15 @@
       userName = "Charlot Shaw";
       difftastic.enable = true;
 
+      ignores = [
+        ".nrepl-port"
+        ".clj-kondo/"
+        ".calva/"
+        ".lsp/"
+        ".cpcache/"
+        ".direnv/"
+      ];
+
       extraConfig = {
         rerere.enable = true;
         diff.algorithm = "patience";
