@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
-    nvtop
+    nvtopPackages.full
     mangohud
     vulkan-tools
     steam
