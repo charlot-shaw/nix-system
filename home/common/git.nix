@@ -30,5 +30,9 @@
         };
       };
     };
+
+    git-cliff = {
+      enable = true;
+    };
   };
 }
