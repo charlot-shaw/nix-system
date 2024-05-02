@@ -50,7 +50,7 @@
     layout = "us,us";
     xkbVariant = ",colemak_dh";
     xkbOptions = "grp:rctrl_rshift_toggle,grp_led:caps,caps:backspace";
-    desktopManager.plasma5.enable = true;
+    desktopManager.cinnamon.enable = true;
   };
 
   # sound
