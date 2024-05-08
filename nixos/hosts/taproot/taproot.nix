@@ -17,7 +17,6 @@
 
     # Services
     ./homepage.nix
-
   ];
 
   boot.loader.grub = {

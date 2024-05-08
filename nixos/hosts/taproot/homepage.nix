@@ -1,7 +1,7 @@
 {config, ...}: {
   services.homepage-dashboard = {
     enable = true;
-    listenPort = 8082; 
+    listenPort = 8082;
     settings = {
       title = "Sparrownet";
       headerStyle = "boxedWidgets";
