@@ -33,6 +33,8 @@
     ./common/comms.nix
 
     ./common/art.nix
+
+    ./common/pkm.nix
   ];
 
   # Add stuff for your user as you see fit:
