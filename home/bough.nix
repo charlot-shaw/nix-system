@@ -16,5 +16,6 @@
     ./common/art.nix
     ./common/pkm.nix
     ./common/screenshot.nix
+    ./common/godot.nix
   ];
 }
