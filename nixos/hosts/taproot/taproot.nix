@@ -17,6 +17,7 @@
 
     # Services
     ./homepage.nix
+    ./nfs.nix
   ];
 
   boot.loader.grub = {
