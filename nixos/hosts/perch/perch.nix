@@ -26,6 +26,7 @@
     ../../common/default.nix
 
     ../../../users/sparrows.nix
+    ../../../users/dingo.nix
 
     ../../common/bluetooth.nix
     ../../common/pen_tablet.nix
