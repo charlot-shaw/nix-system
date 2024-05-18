@@ -1,4 +1,8 @@
 {...}: {
+  imports = [
+    ../../resources/hosts.nix
+  ];
+
   services.openssh = {
     enable = true;
     settings = {

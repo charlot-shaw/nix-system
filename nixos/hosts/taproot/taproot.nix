@@ -17,6 +17,7 @@
 
     # Services
     ./homepage.nix
+    ./prometheus.nix
     ./nfs.nix
   ];
 
