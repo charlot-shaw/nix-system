@@ -18,7 +18,6 @@
     # Services
     ./homepage.nix
     ./prometheus.nix
-    ./nfs.nix
   ];
 
   boot.loader.grub = {
