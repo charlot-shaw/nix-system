@@ -60,8 +60,8 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
-  # Enable the Budgie Desktop environment.
-  services.xserver.desktopManager.budgie.enable = true;
+  # Enable the Cinnamon Desktop environment.
+  services.xserver.desktopManager.cinnamon.enable = true;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
