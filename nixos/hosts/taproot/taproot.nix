@@ -15,6 +15,8 @@
     ../../../users/sparrows.nix
     ../../common/tailscale.nix
 
+    ../../common/avahi.nix
+
     # Services
     ./homepage.nix
     ./prometheus.nix
@@ -84,6 +86,9 @@
   environment.systemPackages = with pkgs; [
     firefox
   ];
+
+
+  sparrows.avahi.enable = true;
 
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
