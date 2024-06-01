@@ -22,6 +22,7 @@
     ../../../users/sparrows.nix
 
     ../../common/tailscale.nix
+    ../../common/avahi.nix
 
     ../../common/hyprland.nix
     ../../common/swaylock.nix
@@ -98,6 +99,8 @@
     cinnamon.xreader
     vlc
   ];
+
+  sparrows.avahi.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
