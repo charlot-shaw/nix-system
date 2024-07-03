@@ -32,6 +32,8 @@
     ../../common/pen_tablet.nix
 
     ../../common/tailscale.nix
+
+    ../../common/gaming.nix
   ];
 
   networking.hostName = "perch";

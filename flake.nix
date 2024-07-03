@@ -116,6 +116,14 @@
         modules = [./home/perch.nix];
       };
 
+      homeConfigurations = {
+        "dingo@perch" = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
+          extraSpecialArgs = {inherit inputs outputs nix-colors;};
+          modules = [./home/dingoperch.nix];
+        };
+      };
+
       "sparrows@bough" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         modules = [./home/bough.nix];
