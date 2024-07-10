@@ -16,16 +16,8 @@
   # All other arguments come from the module system.
   config,
   ...
-}:
-with lib;
-with lib.${namespace}; let
-  cfg = config.${namespace}.editors.vscode;
-in {
-  options.${namespace}.editors.vscode = {
-    enable = mkEnableOption false "Enable VSCode and preferred plugins.";
-  };
-
-  config = mkIf cfg.enable {
+}: {
+  config = {
     programs.vscode = {
       enable = true;
       mutableExtensionsDir = false;

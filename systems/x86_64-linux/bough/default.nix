@@ -23,8 +23,12 @@
 
   ${namespace} = {
     services.comin.enable = true;
+    #services.ssh.enable = true;
+
     hardware.audio.enable = true;
     desktops.cinnamon.enable = true;
+    util.common.enable = true;
+    util.terminal.enable = true;
   };
 
   # Bootloader.

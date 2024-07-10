@@ -42,7 +42,7 @@ in {
     };
 
     environment.systemPackages = [
-      pkgs.snowfallorg.frost
+      #pkgs.snowfallorg.frost
     ];
 
     # Set your time zone.

@@ -57,7 +57,7 @@
       };
 
       channels-config = {
-        allow-unfree = true;
+        allowUnfree = true;
       };
 
       systems.modules.nixos = with inputs; [
