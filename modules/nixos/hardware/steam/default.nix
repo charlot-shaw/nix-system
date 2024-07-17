@@ -21,7 +21,7 @@ with lib;
 with lib.${namespace}; let
   cfg = config.${namespace}.hardware.steam;
 in {
-  options.${namespace}.hardware.steam = {
+  options.${namespace}.hardware.steam  = with types; {
     enable = lib.mkEnableOption false "Enable Steam hardware and 32 bit support.";
   };
 
