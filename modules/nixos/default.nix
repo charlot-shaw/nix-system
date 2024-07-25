@@ -3,4 +3,5 @@
 {
   # List your module files here
   # my-module = import ./my-module.nix;
+  beyond-all-reason = import ./beyond_all_reason.nix
 }
