@@ -98,6 +98,8 @@
     cinnamon.nemo-with-extensions
     cinnamon.xreader
     vlc
+
+    beyond-all-reason
   ];
 
   sparrows.avahi.enable = true;
