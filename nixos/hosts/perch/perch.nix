@@ -57,7 +57,6 @@
   };
 
   # sound
-  sound.enable = true;
   hardware.pulseaudio.enable = true;
 
   # default packages

@@ -75,7 +75,6 @@
   services.xserver.desktopManager.cinnamon.enable = true;
 
   # Enable sound.
-  sound.enable = true;
   hardware.pulseaudio.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
