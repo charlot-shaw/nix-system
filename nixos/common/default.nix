@@ -7,5 +7,6 @@
     ./locale.nix
     ./shells.nix
     ./prometheus_node_exporter.nix
+    ./network.nix
   ];
 }
