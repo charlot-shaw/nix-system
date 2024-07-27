@@ -1,8 +1,7 @@
 {
   config,
-  pkgs,
+  pkgs,...
 }: {
-  # https://discourse.nixos.org/t/rebuild-error-failed-to-start-network-manager-wait-online/41977
-  systemd.network.wait-online.enable = false;
-  boot.initrd.systemd.network.wait-online.enable = false;
+  # https://discourse.nixos.org/t/nixos-rebuild-switch-upgrade-networkmanager-wait-online-service-failure/30746
+  systemd.services.NetworkManager-wait-online.enable = pkgs.lib.mkForce false;
 }
