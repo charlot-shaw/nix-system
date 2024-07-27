@@ -86,7 +86,6 @@
     firefox
   ];
 
-
   sparrows.avahi = {
     enable = true;
     publish = true;
