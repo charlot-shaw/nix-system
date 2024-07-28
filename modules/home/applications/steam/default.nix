@@ -19,20 +19,13 @@
 }:
 with lib;
 with lib.${namespace}; let
-  cfg = config.${namespace}.hardware.audio;
+  cfg = config.${namespace}.applications.steam;
 in {
-  options.${namespace}.hardware.audio = {
-    enable = mkEnableOption "Enable audio and Pipewire.";
+  options.${namespace}.applications.steam = {
+    enable = mkEnableOption "Enable Steam.";
   };
 
   config = mkIf cfg.enable {
-    hardware.pulseaudio.enable = false;
-
-    services.pipewire = {
-      enable = true;
-      alsa.enable = true;
-      alsa.support32Bit = true;
-      pulse.enable = true;
-    };
+    home.packages = [pkgs.steam pkgs.mangohud];
   };
 }

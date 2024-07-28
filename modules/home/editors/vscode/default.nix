@@ -21,8 +21,8 @@ with lib;
 with lib.${namespace}; let
   cfg = config.${namespace}.editors.vscode;
 in {
-  options.${namespace}.editors.vscode = with types; {
-    enable = lib.mkEnableOption false "Enable VSCode and preferred plugins.";
+  options.${namespace}.editors.vscode = {
+    enable = mkEnableOption "Enable VSCode and preferred plugins.";
   };
 
   config = mkIf cfg.enable {

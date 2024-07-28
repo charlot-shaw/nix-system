@@ -18,21 +18,9 @@
   ...
 }:
 with lib;
-with lib.${namespace}; let
-  cfg = config.${namespace}.hardware.audio;
-in {
-  options.${namespace}.hardware.audio = {
-    enable = mkEnableOption "Enable audio and Pipewire.";
-  };
-
-  config = mkIf cfg.enable {
-    hardware.pulseaudio.enable = false;
-
-    services.pipewire = {
-      enable = true;
-      alsa.enable = true;
-      alsa.support32Bit = true;
-      pulse.enable = true;
+{
+    home.file = {
+      ".ssh/id_ed25519.pub".source = inputs.self + resources/keys/sparrows_id_ed25519.pub;
+      ".ssh/allowed_signers".text = "* ${builtins.readFile inputs.self + resources/keys/sparrows_id_ed25519.pub}";
     };
-  };
 }

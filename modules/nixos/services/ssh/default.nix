@@ -22,12 +22,15 @@ with lib.${namespace}; let
   cfg = config.${namespace}.services.ssh;
 in {
   options.${namespace}.services.ssh = {
-    enable = mkEnableOption "Enable SSH and it's agent.";
+    enable = mkEnableOption "Enable SSH and populate keys.";
   };
 
-  config = {
+  config = mkIf cfg.enable {
     services.openssh = {
       enable = true;
+      banner = ''
+        Welcome to Sparrow's servers.
+      '';
       settings = {
         PermitRootLogin = "no";
         PasswordAuthentication = false;

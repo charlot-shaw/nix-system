@@ -71,6 +71,7 @@
 
       outputs-builder = channels: {
         formatter = channels.nixpkgs.alejandra;
+        users.mutableUsers = false;
       };
     };
 }

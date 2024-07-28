@@ -22,7 +22,7 @@ with lib.${namespace}; let
   cfg = config.${namespace}.applications.office;
 in {
   options.${namespace}.applications.office = {
-    enable = lib.mkEnableOption false "Enable LibreOffice.";
+    enable = mkEnableOption "Enable LibreOffice.";
   };
 
   config = mkIf cfg.enable {
