@@ -6,7 +6,7 @@
     openssh.authorizedKeys.keyFiles = [
       ../resources/keys/sparrows_id_ed25519.pub
     ];
-    password = "cyclops";
+    initialPassword = "change-me-sight-away";
     extraGroups = ["wheel" "networkmanager"];
   };
 }
