@@ -12,6 +12,7 @@
       ms-vscode-remote.remote-ssh
       tailscale.vscode-tailscale
       github.vscode-github-actions
+      elixir-lsp.vscode-elixir-ls
     ];
 
     userSettings = {
