@@ -19,6 +19,7 @@
 }: {
   imports = [
     ./bough_hardware.nix
+    ../../../users/sparrows.nix
   ];
 
   ${namespace} = {
