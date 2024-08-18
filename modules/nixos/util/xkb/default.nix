@@ -16,10 +16,19 @@
   # All other arguments come from the module system.
   config,
   ...
-}:
-with lib; {
-  home.file = {
-    ".ssh/id_ed25519.pub".source = inputs.self + resources/keys/sparrows_id_ed25519.pub;
-    ".ssh/allowed_signers".text = "* ${builtins.readFile inputs.self + resources/keys/sparrows_id_ed25519.pub}";
+}: let
+  cfg = config.${namespace}.util.xkb;
+in {
+  options.${namespace}.util.xkb = {
+    enable = lib.mkEnableOption "Colemak layout for xserver based displays.";
   };
+
+  config =
+    lib.mkIf cfg.enable {
+      services.xserver = {
+        layout = "us,us";
+        xkbVariant = ",colemak_dh";
+        xkbOptions = "grp:rctrl_rshift_toggle,grp_led:caps,caps:backspace";
+      };
+    };
 }
