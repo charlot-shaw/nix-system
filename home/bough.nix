@@ -14,7 +14,7 @@
     ./common/wpaperd.nix
     ./common/office.nix
     ./common/art.nix
-    # ./common/pkm.nix
+    ./common/pkm.nix
     ./common/screenshot.nix
     ./common/godot.nix
   ];
