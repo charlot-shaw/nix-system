@@ -4,5 +4,6 @@
     mangohud
     vulkan-tools
     steam
+    atlauncher
   ];
 }
