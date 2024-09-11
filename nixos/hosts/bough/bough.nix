@@ -94,8 +94,8 @@
   environment.systemPackages = with pkgs; [
     pavucontrol
 
-    cinnamon.nemo-with-extensions
-    cinnamon.xreader
+    nemo-with-extensions
+    xreader
     vlc
 
     beyond-all-reason
