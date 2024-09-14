@@ -57,7 +57,7 @@
   };
 
   # sound
-  hardware.pulseaudio.enable = true;
+  hardware.pulseaudio.enable = false;
 
   # default packages
   environment.systemPackages = with pkgs; [
