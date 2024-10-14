@@ -5,5 +5,6 @@
     vulkan-tools
     steam
     atlauncher
+    prismlauncher
   ];
 }
