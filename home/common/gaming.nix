@@ -7,5 +7,6 @@
     atlauncher
     prismlauncher
     lutris
+    heroic
   ];
 }
