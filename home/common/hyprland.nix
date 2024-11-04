@@ -41,7 +41,7 @@ in {
       monitor = [
         # TODO See if I can get this to be bound to something other than ports.
         #portrait monitor
-        "HDMI-A-1, 1920x1080, 2560x-180,1,transform,3"
+        "HDMI-A-1, 1920x1080, 2560x-180,1,transform,1"
         #main monitor
         "DP-2, 2560x1440,0x0,1"
         ",preferred,auto,auto"
