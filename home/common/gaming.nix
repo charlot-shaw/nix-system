@@ -6,5 +6,6 @@
     steam
     atlauncher
     prismlauncher
+    lutris
   ];
 }
