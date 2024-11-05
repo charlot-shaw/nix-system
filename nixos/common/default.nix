@@ -8,5 +8,6 @@
     ./shells.nix
     ./prometheus_node_exporter.nix
     ./network.nix
+    ./stylix.nix
   ];
 }

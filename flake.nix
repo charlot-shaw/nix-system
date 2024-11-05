@@ -11,9 +11,9 @@
 
     hardware.url = "github:nixos/nixos-hardware";
 
-    # Shameless plug: looking for a way to nixify your themes and make
-    # everything match nicely? Try nix-colors!
-    nix-colors.url = "github:misterio77/nix-colors";
+    # Styling
+    stylix.url = "github:danth/stylix";
+    stylix.inputs.nixpkgs.follows = "nixpkgs";
 
     #Comin, for updates
     comin = {
@@ -36,7 +36,7 @@
     self,
     nixpkgs,
     home-manager,
-    nix-colors,
+    stylix,
     agenix,
     hyprland,
     comin,
@@ -81,6 +81,7 @@
           ./nixos/hosts/perch/perch.nix
           agenix.nixosModules.default
           comin.nixosModules.comin
+          stylix.nixosModules.stylix
         ];
       };
 
@@ -90,6 +91,7 @@
           ./nixos/hosts/bough/bough.nix
           agenix.nixosModules.default
           comin.nixosModules.comin
+          stylix.nixosModules.stylix
         ];
       };
       taproot = nixpkgs.lib.nixosSystem {
@@ -98,6 +100,7 @@
           ./nixos/hosts/taproot/taproot.nix
           agenix.nixosModules.default
           comin.nixosModules.comin
+          stylix.nixosModules.stylix
         ];
       };
     };
@@ -107,26 +110,38 @@
     homeConfigurations = {
       "sparrows@perch" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
-        extraSpecialArgs = {inherit inputs outputs nix-colors;};
-        modules = [./home/perch.nix];
+        extraSpecialArgs = {inherit inputs outputs;};
+        modules = [
+          ./home/perch.nix
+          stylix.homeManagerModules.stylix
+        ];
       };
 
       "dingo@perch" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
-        extraSpecialArgs = {inherit inputs outputs nix-colors;};
-        modules = [./home/dingoperch.nix];
+        extraSpecialArgs = {inherit inputs outputs;};
+        modules = [
+          ./home/dingoperch.nix
+          stylix.homeManagerModules.stylix
+        ];
       };
 
       "sparrows@bough" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        modules = [./home/bough.nix];
-        extraSpecialArgs = {inherit inputs outputs nix-colors;};
+        modules = [
+          ./home/bough.nix
+          stylix.homeManagerModules.stylix
+        ];
+        extraSpecialArgs = {inherit inputs outputs;};
       };
 
       "sparrows@taproot" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        modules = [./home/taproot.nix];
-        extraSpecialArgs = {inherit inputs outputs nix-colors;};
+        modules = [
+          ./home/taproot.nix
+          stylix.homeManagerModules.stylix
+        ];
+        extraSpecialArgs = {inherit inputs outputs;};
       };
     };
   };
