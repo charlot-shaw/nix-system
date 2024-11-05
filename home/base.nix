@@ -4,14 +4,14 @@
   pkgs,
   config,
   outputs,
+  stylix,
   ...
 }: let
-  inherit (inputs.nix-colors) colorSchemes;
+
 in {
   imports = [
     # Every home installation has to have git, make it my config.
     ./common/git.nix
-    inputs.nix-colors.homeManagerModule
   ];
 
   nixpkgs = {
@@ -56,6 +56,4 @@ in {
       ".background-image".source = ../resources/walls/mihael_stojcevic_sddm_backdrop.png;
     };
   };
-
-  colorscheme = lib.mkDefault colorSchemes.rose-pine;
 }

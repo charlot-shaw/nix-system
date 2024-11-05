@@ -1,6 +1,6 @@
 {config, ...}: let
   module-radius = "10px";
-  border-settings = "2px solid #${config.colorScheme.palette.base03};";
+  border-settings = "2px solid #${config.lib.stylix.colors.base03};";
 in {
   programs.waybar = {
     enable = true;
@@ -68,7 +68,7 @@ in {
 
         window#waybar {
             background-color: transparent;
-            color: #${config.colorScheme.palette.base04};
+            color: #${config.lib.stylix.colors.base04};
             transition-property: background-color;
             transition-duration: .5s;
         }
@@ -92,7 +92,7 @@ in {
         }
 
         #workspaces button.active {
-          color: #${config.colorScheme.palette.base0A};
+          color: #${config.lib.stylix.colors.base0A};
         }
 
         #mode {
@@ -108,14 +108,14 @@ in {
             border-bottom: ${border-settings}
             border-right: ${border-settings}
             border-bottom-right-radius: ${module-radius};
-            background-color: #${config.colorScheme.palette.base01};
+            background-color: #${config.lib.stylix.colors.base01};
         }
 
         .modules-right {
             border-bottom: ${border-settings}
             border-left: ${border-settings}
             border-bottom-left-radius: ${module-radius};
-            background-color: #${config.colorScheme.palette.base01};
+            background-color: #${config.lib.stylix.colors.base01};
         }
 
         .modules-right > widget:not(:last-child) {
@@ -199,11 +199,11 @@ in {
         }
 
         #network.disconnected {
-            color: #${config.colorScheme.palette.base0F};
+            color: #${config.lib.stylix.colors.base0F};
         }
 
         #pulseaudio.muted {
-            color: #${config.colorScheme.palette.base0F};
+            color: #${config.lib.stylix.colors.base0F};
         }
 
         #temperature {

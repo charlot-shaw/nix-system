@@ -7,9 +7,15 @@
     enable = true;
     settings = {
       indicator-radius = 100;
-      indicator-thickness = 20;
-      inside-color = config.colorScheme.palette.base01;
-      ring-color = config.colorScheme.palette.base0A;
+      indicator-thickness = 15;
+      inside-color = config.lib.stylix.colors.base00;
+      inside-clear-color = config.lib.stylix.colors.base01;
+      text-color = config.lib.stylix.colors.base04;
+      line-uses-ring = true;
+      ring-color = config.lib.stylix.colors.base0D;
+      ring-clear-color = config.lib.stylix.colors.base0F;
+      ring-wrong-color = config.lib.stylix.colors.base0F;
+      image = "~/.background-image";
     };
   };
 

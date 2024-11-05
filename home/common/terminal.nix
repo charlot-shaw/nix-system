@@ -7,8 +7,8 @@
     kitty = {
       enable = true;
       settings = {
-        foreground = "#${config.colorScheme.palette.base05}";
-        background = "#${config.colorScheme.palette.base00}";
+        foreground = "#${config.lib.stylix.colors.base05}";
+        background = "#${config.lib.stylix.colors.base00}";
       };
     };
 
