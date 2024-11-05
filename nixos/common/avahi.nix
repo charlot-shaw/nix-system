@@ -16,8 +16,7 @@
     };
   };
 
-  config = {
-    lib.mkIf = config.sparrows.avahi.enable {
+  config = lib.mkIf config.sparrows.avahi.enable {
       services.avahi = {
         enable = true;
 
@@ -27,7 +26,6 @@
           enable = true;
           userServices = true;
         };
-      };
     };
   };
 }
