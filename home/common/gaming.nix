@@ -4,6 +4,7 @@
     mangohud
     vulkan-tools
     steam
+    steam-run
     atlauncher
     prismlauncher
     lutris
