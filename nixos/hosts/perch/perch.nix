@@ -32,6 +32,7 @@
     ../../common/pen_tablet.nix
 
     ../../common/tailscale.nix
+    ../../common/syncthing.nix
 
     ../../common/gaming.nix
   ];
