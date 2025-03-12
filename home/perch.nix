@@ -35,6 +35,8 @@
     ./common/art.nix
 
     ./common/pkm.nix
+
+    ./common/office.nix
   ];
 
   # Add stuff for your user as you see fit:
